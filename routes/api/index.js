@@ -1,5 +1,5 @@
 const router = require("express").Router();
-import bookRoutes from "./books";
+const bookRoutes = require("./books");
 
 router.use("/books", bookRoutes);
 
