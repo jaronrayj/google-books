@@ -5,10 +5,11 @@ function LikeBtn(props) {
 
     function clickHandler  () {
         let id = this.data("id");
+        console.log("TCL: clickHandler -> id", id);
     }
 
     return (
-        <Button data-id={props.id} onClick={clickHandler} icon="like" />
+        <Button data-id={props.id} onClick={clickHandler} tabIndex="0" icon="like" />
     )
 }
 
