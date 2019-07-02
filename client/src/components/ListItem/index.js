@@ -1,11 +1,13 @@
 import React from "react";
-import { List } from 'semantic-ui-react';
+import { List, Card } from 'semantic-ui-react';
 import "./style.css";
 
-export function ListItem({ children }) {
+export function ListItem({ children, props }) {
     return (
         <List.Item>
-            {children}
+            <Card>
+                {children}
+            </Card>
         </List.Item>
     );
 }

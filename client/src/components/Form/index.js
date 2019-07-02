@@ -6,9 +6,9 @@ const StandardForm = props => (
         <Form>
             <Form.Field>
                 <h2>{props.search}</h2>
-                <input autoFocus placeholder={props.placeholder} />
+                <input onChange={props.inputChange} name={props.name} autoFocus placeholder={props.placeholder} />
             </Form.Field>
-            <Button type='submit'>Submit</Button>
+            <Button onClick={props.clickHandle} type='submit'>Submit</Button>
         </Form>
     </Container>
 )
