@@ -70,37 +70,39 @@ class App extends Component {
           name="search"
           inputChange={this.handleInputChange}
         />
+              <br />
         <Container>
-          <List>
-            <br />
-            {this.state.books.map(book => {
-              let searchBook = book.volumeInfo
-              return (
-                <ListItem key={book.id}>
-                  <Card.Content>
-                    <a href={searchBook.previewLink}>
-                      <Image floated='right' size='small' src={searchBook.imageLinks.smallThumbnail} />
-                    </a>
-                    <strong>
-                      {searchBook.title}
-                    </strong>
-                    <br />
-                    by {searchBook.authors[0]}
-                    <br />
-                    <LikeBtn onClick={() => this.addBook({
-                      title: searchBook.title,
-                      author: searchBook.authors[0],
-                      synopsis: searchBook.description,
-                      image: searchBook.imageLinks.thumbnail,
-                      link: searchBook.infoLink
-                    })} />
-                  </Card.Content>
+            <List>
+          <Card.Group>
+              {this.state.books.map(book => {
+                let searchBook = book.volumeInfo
+                return (
+                  <ListItem key={book.id}>
+                    <Card.Content>
+                      <a href={searchBook.previewLink}>
+                        <Image floated='right' size='small' src={searchBook.imageLinks.smallThumbnail} />
+                      </a>
+                      <strong>
+                        {searchBook.title}
+                      </strong>
+                      <br />
+                      by {searchBook.authors[0]}
+                      <br />
+                      <LikeBtn onClick={() => this.addBook({
+                        title: searchBook.title,
+                        author: searchBook.authors[0],
+                        description: searchBook.description,
+                        image: searchBook.imageLinks.thumbnail,
+                        link: searchBook.previewLink
+                      })} />
+                    </Card.Content>
 
 
-                </ListItem>
-              );
-            })}
-          </List>
+                  </ListItem>
+                );
+              })}
+          </Card.Group>
+            </List>
         </Container>
       </>
     );
